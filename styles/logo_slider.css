@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+/* Nueva animación tipo scroll */
+@keyframes scroll-marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-33.333%);
+    }
+}
+
+.logo-marquee {
+    overflow: hidden;
+    padding: 30px 0;
+    background-color: white;
+    width: 100%;
+}
+
+.logo-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-marquee 20s linear infinite;
+}
+
+.logo-track img {
+    height: 50px;
+    margin: 0 40px;
+    max-width: 180px;
+    object-fit: contain;
+}
