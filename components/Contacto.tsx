@@ -12,8 +12,8 @@ import "@/styles/logo_slider.css";
 
 const Contacto = () => {
     const contactInfo = {
-        telefono: "+54 11 1234-5678",
-        email: "info@prevencionhs.com",
+        telefono: "+54 11 4029-6806",
+        email: "hspablososa@gmail.com",
         direccion: "Buenos Aires, Argentina",
         horarios: "Lunes a Viernes 9:00 - 18:00",
         tiempoRespuesta: "Respuesta en 24 horas",

@@ -7,6 +7,7 @@ const Clientes = () => {
         { item_id: 2, imagen: "/images/clientes/clientes_2.png" },
         { item_id: 3, imagen: "/images/clientes/clientes_3.png" },
         { item_id: 3, imagen: "/images/clientes/clientes_4.png" },
+        { item_id: 1, imagen: "/images/clientes/clientes_5.png" }
     ]
     
     return (
