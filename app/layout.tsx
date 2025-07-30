@@ -13,7 +13,6 @@ export const metadata: Metadata = {
     shortcut: "/images/phs-logo-main.png",
     apple: "/images/phs-logo-main.png",
   },
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
