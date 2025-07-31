@@ -9,12 +9,14 @@ import { About } from "@/components/About"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
+import Image from "next/image"
 
 import ServicesTabs from "@/components/ServicesTabs"
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "../styles/logo_slider.css";
+
 
 function scrollToElementWithOffset(id: string, offset = 0, duration = 800) {
   const target = document.getElementById(id)
@@ -193,6 +195,20 @@ export default function SafetyConsultingLanding() {
           <Contacto></Contacto>
         </section>
       </main>
+      <Link
+        href="https://wa.me/541140296806?text=Hola%20PHS%2C%20quer%C3%ADa%20contactarme%20con%20ustedes%20para%20consultar..."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-5 right-5 z-50"
+      >
+     <Image
+      src="/images/whatsapp-icon.png"
+      alt="WhatsApp"
+      width={60}
+      height={60}
+      className="hover:scale-110 transition-transform drop-shadow-lg"
+      />
+</Link>
 
       <Footer></Footer>
     </div>
