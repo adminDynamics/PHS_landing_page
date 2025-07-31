@@ -1,4 +1,6 @@
 import React from 'react'
+import emailjs from "@emailjs/browser"
+import { useRef } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Phone, Mail, MapPin } from "lucide-react"
 import { Input } from "@/components/ui/input"
@@ -10,6 +12,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "@/styles/logo_slider.css";
 
+const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
+
 const Contacto = () => {
     const contactInfo = {
         telefono: "+54 11 4029-6806",
@@ -20,6 +26,29 @@ const Contacto = () => {
         atencionPresencial: "Atención presencial con cita previa",
     }
     
+    const form = useRef<HTMLFormElement>(null)
+
+    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
+    
+      if (!form.current) return
+    
+      emailjs.sendForm(
+        serviceId,
+        templateId,
+        form.current,
+        publicKey
+      ).then(
+        () => {
+          alert('Mensaje enviado correctamente')
+          form.current?.reset()
+        },
+        (error) => {
+          alert('Ocurrió un error al enviar el mensaje')
+          console.error(error)
+        }
+      )
+    }   
     return (
         <div className="w-full max-w-6xl mx-auto px-2 sm:px-4 md:px-6">
             <div className="bg-white rounded-2xl shadow-2xl p-2 sm:p-4 md:p-8 lg:p-12 flex flex-col lg:flex-row gap-4 sm:gap-8 lg:gap-12 items-stretch">
@@ -69,7 +98,7 @@ const Contacto = () => {
                             </CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <form className="space-y-4 sm:space-y-6">
+                            <form ref={form}  onSubmit={sendEmail} className="space-y-4 sm:space-y-6">
                                 <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
                                     <div className="space-y-2">
                                         <label htmlFor="nombre" className="text-sm font-medium text-gray-700">
