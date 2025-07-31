@@ -98,51 +98,83 @@ const Contacto = () => {
                             </CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <form ref={form}  onSubmit={sendEmail} className="space-y-4 sm:space-y-6">
-                                <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
-                                    <div className="space-y-2">
-                                        <label htmlFor="nombre" className="text-sm font-medium text-gray-700">
-                                            Nombre *
-                                        </label>
-                                        <Input id="nombre" placeholder="Tu nombre completo" className="h-10 sm:h-12" />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label htmlFor="empresa" className="text-sm font-medium text-gray-700">
-                                            Empresa *
-                                        </label>
-                                        <Input id="empresa" placeholder="Nombre de la empresa" className="h-10 sm:h-12" />
-                                    </div>
-                                </div>
-                                <div className="space-y-2">
-                                    <label htmlFor="email" className="text-sm font-medium text-gray-700">
-                                        Email *
-                                    </label>
-                                    <Input id="email" type="email" placeholder="tu@email.com" className="h-10 sm:h-12" />
-                                </div>
-                                <div className="space-y-2">
-                                    <label htmlFor="telefono" className="text-sm font-medium text-gray-700">
-                                        Teléfono
-                                    </label>
-                                    <Input id="telefono" placeholder="+54 11 1234-5678" className="h-10 sm:h-12" />
-                                </div>
-                                <div className="space-y-2">
-                                    <label htmlFor="mensaje" className="text-sm font-medium text-gray-700">
-                                        Mensaje *
-                                    </label>
-                                    <Textarea
-                                        id="mensaje"
-                                        placeholder="Cuéntanos sobre tus necesidades de seguridad e higiene..."
-                                        rows={4}
-                                        className="resize-none"
-                                    />
-                                </div>
-                                <Button
-                                    type="submit"
-                                    className="w-full bg-teal-600 hover:bg-teal-700 text-white h-12 text-lg rounded-full"
-                                >
-                                    Enviar Consulta
-                                </Button>
-                            </form>
+                        <form ref={form} onSubmit={sendEmail} className="space-y-4 sm:space-y-6">
+  <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
+    <div className="space-y-2">
+      <label htmlFor="nombre" className="text-sm font-medium text-gray-700">
+        Nombre *
+      </label>
+      <Input
+        name="nombre"
+        id="nombre"
+        required
+        placeholder="Tu nombre completo"
+        className="h-10 sm:h-12"
+      />
+    </div>
+    <div className="space-y-2">
+      <label htmlFor="empresa" className="text-sm font-medium text-gray-700">
+        Empresa *
+      </label>
+      <Input
+        name="empresa"
+        id="empresa"
+        required
+        placeholder="Nombre de la empresa"
+        className="h-10 sm:h-12"
+      />
+    </div>
+  </div>
+
+  <div className="space-y-2">
+    <label htmlFor="email" className="text-sm font-medium text-gray-700">
+      Email *
+    </label>
+    <Input
+      name="email"
+      id="email"
+      type="email"
+      required
+      placeholder="tu@email.com"
+      className="h-10 sm:h-12"
+    />
+  </div>
+
+  <div className="space-y-2">
+    <label htmlFor="telefono" className="text-sm font-medium text-gray-700">
+      Teléfono (opcional)
+    </label>
+    <Input
+      name="telefono"
+      id="telefono"
+      placeholder="+54 11 1234-5678"
+      className="h-10 sm:h-12"
+    />
+  </div>
+
+  <div className="space-y-2">
+    <label htmlFor="mensaje" className="text-sm font-medium text-gray-700">
+      Mensaje *
+    </label>
+    <Textarea
+      name="mensaje"
+      id="mensaje"
+      required
+      placeholder="Cuéntanos sobre tus necesidades de seguridad e higiene..."
+      rows={4}
+      className="resize-none"
+    />
+  </div>
+
+  <Button
+    type="submit"
+    className="w-full bg-teal-600 hover:bg-teal-700 text-white h-12 text-lg rounded-full"
+  >
+    Enviar Consulta
+  </Button>
+</form>
+         
+   
                         </CardContent>
                     </Card>
                 </div>
