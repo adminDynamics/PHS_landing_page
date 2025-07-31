@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   title: "PHS - Prevención Higiene y Seguridad",
   description: "Consultora especializada en seguridad, higiene y protección ambiental",
   icons: {
-    icon: "/images/phs-logo-main.png",
-    shortcut: "/images/phs-logo-main.png",
-    apple: "/images/phs-logo-main.png",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 }
 
